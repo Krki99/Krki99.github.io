@@ -16,11 +16,11 @@ body {
   
   .stitch-block2 {
     position: absolute;
-    top: 35%;
-    left: 35%;
+    top: 60%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    width: 38em;
-    height: 35em;
+    width: 71em;
+    height: 78em;
   }
 
   .stitch{
