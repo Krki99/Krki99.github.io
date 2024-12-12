@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<script language="javascript"> 
+  
+  function change_stitch(){
+     var NAME = document.getElementById("StitchMain");
+     NAME.className = (NAME.className == "stitch2") ? "stitch" : "stitch2";
+     var NAME2 = document.getElementById("StitchMainBlock");
+     NAME2.className = (NAME2.className == "stitch-block2") ? "stitch-block" : "stitch-block2";
+}
+</script>
 <html>
 <head>
 <title>stitch</title>
@@ -6,8 +15,8 @@
 </head>
 <body>
 
-    <div class="stitch-block">
-        <div class="stitch">
+    <div class="stitch-block" onclick="change_stitch();" id="StitchMainBlock" >
+        <div class="stitch"  id="StitchMain">
         <div>
       </div>
 </body>
