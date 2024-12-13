@@ -3,24 +3,26 @@ body {
       padding: 0;
       border: 0;
     background: #FCE2D4;
+    width: device-width;
   }
   
   .stitch-block {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 38em;
-    height: 35em;
+    top: 40%;
+    left: 40%;
+    transform: translate(0%, 0%);
+    width: 50%;
+    height: 50%;
   }
   
   .stitch-block2 {
     position: absolute;
-    top: 60%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-    width: 71em;
-    height: 78em;
+    top: 20%;
+    left: 30%;
+    transform: translate(0%, 0%);
+    /* align-self: center; */
+    width: 70%;
+    height: 70%;
   }
 
   .stitch{
@@ -899,7 +901,6 @@ body {
       11em 24em #EA9999,
       12em 24em #EA9999,
       13em 24em #333,
-
       24em 24em #333,
       25em 24em #333,
       26em 24em #4ebcff,
@@ -911,11 +912,11 @@ body {
       32em 24em #2972b6,
       33em 24em #2972b6,
       34em 24em #2972b6,
-      35em 24em #2972b6,
-      36em 24em #2972b6,
-      37em 24em #2972b6,
+      35em 24em #333,
+      36em 24em #333,
+      37em 24em #333,
       38em 24em #2972b6,
-      39em 24em #2972b6,
+      39em 24em #333,
       40em 24em #2972b6,
       41em 24em #2972b6,
       42em 24em #2972b6,
@@ -927,7 +928,6 @@ body {
       48em 24em #4ebcff,
       49em 24em #4ebcff,
       50em 24em #333,
-
       58em 24em #333,                                    
       59em 24em #2972b6,                                    
       60em 24em #2972b6,
@@ -941,6 +941,196 @@ body {
       68em 24em #EA9999,
       69em 24em #EA9999,
       70em 24em #EA9999,
-      71em 24em #333
+      71em 24em #333,
+
+
+      1em  25em #333,
+      2em  25em #EA9999,
+      3em  25em #EA9999,
+      4em  25em #EA9999,
+      5em  25em #EA9999,
+      6em  25em #EA9999,
+      7em  25em #EA9999,
+      8em  25em #EA9999,
+      9em  25em #EA9999,
+      10em 25em #EA9999,
+      11em 25em #EA9999,
+      12em 25em #333,
+      13em 25em #2972b6,
+      14em 25em #333,
+
+      23em 25em #333,
+      24em 25em #4ebcff,
+      25em 25em #4ebcff,
+      26em 25em #4ebcff,
+      27em 25em #4ebcff,
+      28em 25em #2972b6,
+      29em 25em #2972b6,
+      30em 25em #2972b6,
+      31em 25em #2972b6,
+      32em 25em #2972b6,
+      33em 25em #333,
+      34em 25em #333,
+      35em 25em #2972b6,
+      36em 25em #2972b6,
+      37em 25em #2972b6,
+      38em 25em #2972b6,
+      39em 25em #2972b6,
+      40em 25em #333,
+      41em 25em #2972b6,
+      42em 25em #2972b6,
+      43em 25em #2972b6,
+      44em 25em #4ebcff,
+      45em 25em #4ebcff,
+      46em 25em #4ebcff,
+      47em 25em #4ebcff,
+      48em 25em #4ebcff,
+      49em 25em #4ebcff,
+      50em 25em #4ebcff,
+      51em 25em #333,
+
+      58em 25em #333,                                    
+      59em 25em #2972b6,                                    
+      60em 25em #2972b6,
+      61em 25em #333,
+      62em 25em #EA9999,
+      63em 25em #EA9999,
+      64em 25em #EA9999,
+      65em 25em #EA9999,
+      66em 25em #EA9999,
+      67em 25em #EA9999,
+      68em 25em #EA9999,
+      69em 25em #EA9999,
+      70em 25em #EA9999,
+      71em 25em #333,
+
+
+      1em  26em #333,
+      2em  26em #EA9999,
+      3em  26em #EA9999,
+      4em  26em #EA9999,
+      5em  26em #EA9999,
+      6em  26em #EA9999,
+      7em  26em #EA9999,
+      8em  26em #EA9999,
+      9em  26em #EA9999,
+      10em 26em #EA9999,
+      11em 26em #EA9999,
+      12em 26em #333,
+      13em 26em #2972b6,
+      14em 26em #333,
+
+      23em 26em #333,
+      24em 26em #4ebcff,
+      25em 26em #4ebcff,
+      26em 26em #4ebcff,
+      27em 26em #4ebcff,
+      28em 26em #4ebcff,
+      29em 26em #2972b6,
+      30em 26em #2972b6,
+      31em 26em #2972b6,
+      32em 26em #2972b6,
+      33em 26em #2972b6,
+      34em 26em #2972b6,
+      35em 26em #2972b6,
+      36em 26em #333,
+      37em 26em #333,
+      38em 26em #333,
+      39em 26em #2972b6,
+      40em 26em #333,
+      41em 26em #2972b6,
+      42em 26em #333,
+      43em 26em #2972b6,
+      44em 26em #4ebcff,
+      45em 26em #4ebcff,
+      46em 26em #4ebcff,
+      47em 26em #4ebcff,
+      48em 26em #4ebcff,
+      49em 26em #4ebcff,
+      50em 26em #4ebcff,
+      51em 26em #4ebcff,
+      52em 26em #333,
+      53em 26em #333,
+
+      58em 26em #333,                                    
+      59em 26em #2972b6,                                    
+      60em 26em #2972b6,
+      61em 26em #333,
+      62em 26em #EA9999,
+      63em 26em #EA9999,
+      64em 26em #EA9999,
+      65em 26em #EA9999,
+      66em 26em #EA9999,
+      67em 26em #EA9999,
+      68em 26em #EA9999,
+      69em 26em #EA9999,
+      70em 26em #333,
+      71em 26em #333,
+
+      
+      1em  27em #333,
+      2em  27em #EA9999,
+      3em  27em #EA9999,
+      4em  27em #EA9999,
+      5em  27em #EA9999,
+      6em  27em #EA9999,
+      7em  27em #EA9999,
+      8em  27em #EA9999,
+      9em  27em #EA9999,
+      10em 27em #EA9999,
+      11em 27em #EA9999,
+      12em 27em #333,
+      13em 27em #2972b6,
+      14em 27em #333,
+
+      
+      21em 27em #333,
+      22em 27em #333,
+      23em 27em #4ebcff,
+      24em 27em #4ebcff,
+      25em 27em #4ebcff,
+      26em 27em #4ebcff,
+      27em 27em #4ebcff,
+      28em 27em #4ebcff,
+      29em 27em #2972b6,
+      30em 27em #2972b6,
+      31em 27em #2972b6,
+      32em 27em #2972b6,
+      33em 27em #333,
+      34em 27em #333,
+      35em 27em #2972b6,
+      36em 27em #2972b6,
+      37em 27em #2972b6,
+      38em 27em #2972b6,
+      39em 27em #333,
+      40em 27em #333,
+      41em 27em #333,
+      42em 27em #2972b6,
+      43em 27em #4ebcff,
+      44em 27em #4ebcff,
+      45em 27em #4ebcff,
+      46em 27em #4ebcff,
+      47em 27em #333,
+      48em 27em #333,
+      49em 27em #333,
+      50em 27em #333,
+      51em 27em #4ebcff,
+      52em 27em #333,
+      53em 27em #333,
+
+      58em 27em #333,                                    
+      59em 27em #2972b6,                                    
+      60em 27em #2972b6,
+      61em 27em #333,
+      62em 27em #EA9999,
+      63em 27em #EA9999,
+      64em 27em #EA9999,
+      65em 27em #EA9999,
+      66em 27em #EA9999,
+      67em 27em #EA9999,
+      68em 27em #EA9999,
+      69em 27em #EA9999,
+      70em 27em #333,
+      71em 27em #333
 
   }
