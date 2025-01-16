@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stefan Ilic - Digital Business Card</title>
+    <!-- Font Awesome CDN link -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="business-cards.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            /* Dark background */
+            color: #f4f4f4;
+            /* Light text */
+            line-height: 1.6;
+            text-align: center;
+            /* Center all text */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            /* Make the body fill the entire viewport height */
+            padding-top: 200px;
+            /* Add space to prevent content from being hidden under the fixed header */
+        }
+
+        header {
+            background-color: #333;
+            /* Darker header */
+            color: #fff;
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            /* Add space between picture and text */
+            position: fixed;
+            /* Fix the header to the top of the screen */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            /* Ensure the header is always above other content */
+        }
+
+        /* Profile Picture Styles */
+        .profile-pic {
+            border-radius: 50%;
+            border: 5px solid #3498db;
+            /* Blue border */
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            object-position: center 0;
+        }
+
+        header h1 {
+            font-size: 3rem;
+        }
+
+        header p {
+            font-size: 1.25rem;
+        }
+
+        section {
+            margin: 30px 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #3498db;
+            /* Light blue color for section headers */
+            margin-bottom: 10px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            /* Center buttons horizontally */
+        }
+
+        .contact-button {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            /* Align icon to the left */
+            padding: 15px 25px;
+            background-color: #3498db;
+            /* Blue background */
+            color: #fff;
+            text-align: center;
+            font-size: 1.25rem;
+            border-radius: 5px;
+            text-decoration: none;
+            width: 80%;
+            /* Default width (80% of container) */
+            max-width: 350px;
+            /* Maximum width for buttons */
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: #2980b9;
+            /* Darker blue on hover */
+        }
+
+        .contact-button i {
+            font-size: 1.5rem;
+            /* Increase icon size */
+            margin-right: 10px;
+            /* Space between icon and text */
+        }
+
+        footer {
+            background-color: #333;
+            /* Dark footer */
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            margin-top: auto;
+            /* Push footer to the bottom of the page */
+        }
+
+        /* Media Queries for Responsive Design */
+        @media screen and (min-width: 768px) {
+            .contact-button {
+                width: 60%;
+                /* Increase width on medium screens */
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            .contact-button {
+                width: 40%;
+                /* Increase width on large screens */
+            }
+        }
+
+        /* Compact Experience Section Styling */
+        .experience-item {
+            background-color: #444;
+            /* Dark background for experience item */
+            padding: 10px 15px;
+            /* Reduced padding */
+            margin-bottom: 15px;
+            /* Reduced margin */
+            border-radius: 5px;
+            text-align: left;
+            width: 80%;
+            /* Set width for experience items */
+            max-width: 800px;
+            /* Max width */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .experience-item h3 {
+            font-size: 1.5rem;
+            /* Smaller job title */
+            color: #3498db;
+            /* Light blue for job title */
+            margin-bottom: 5px;
+            /* Reduced margin */
+        }
+
+        .experience-item p {
+            font-size: 1rem;
+            /* Smaller font size */
+            color: #fff;
+            margin-bottom: 5px;
+            /* Reduced space between paragraphs */
+        }
+
+        .experience-item strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Profile Picture Section -->
+        
+        <img src="cv.jpg" alt="Stefan Ilic" class="profile-pic">
+        
+        <div>
+            <h1>Stefan Ilic</h1>
+            <p>Embedded systems software developer</p>
+        </div>
+    </header>
+
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>Hello! I am Stefan Ilic, a passionate Embedded systems software developer. I love working on I love working
+            on embedded systems, where I design, develop, and optimize software for specialized devices. From
+            microcontrollers to sensors and hardware interfaces, I create efficient, low-level code that powers
+            everything from medical instruments to IoT devices. Feel free to get in touch!</p>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="container">
+        <h2>Experience</h2>
+        <div class="experience-item">
+            <h3>Junior Embedded Systems Developer | Mikroelektronika</h3>
+            <p><strong>Dates:</strong> September 2021 - May 2024</p>
+            <p>I design and develop software for embedded systems, working with microcontrollers and real-time
+                applications. I optimize code for performance and ensure seamless integration with hardware components.
+            </p>
+        </div>
+        <div class="experience-item">
+            <h3>Embedded Systems Developer - Internship | Mikroelektronika</h3>
+            <p><strong>Dates:</strong> May 2021 - September 2021</p>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact Information</h2>
+        <div class="contact-buttons">
+            <a href="mailto:your-email@example.com" class="contact-button">
+                <i class="fas fa-envelope"></i> ilic.stefan.1999@gmail.com
+            </a>
+            <a href="tel:+381621702719" class="contact-button">
+                <i class="fas fa-phone"></i> +381 62 170 27 19
+            </a>
+            <a href="https://www.linkedin.com/in/stefan-ilic-44811a210" target="_blank" class="contact-button">
+                <i class="fab fa-linkedin"></i> LinkedIn Profile
+            </a>
+            <a href="https://github.com/Krki99" target="_blank" class="contact-button">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://www.snapchat.com/add/krki1999" target="_blank" class="contact-button">
+                <i class="fab fa-snapchat"></i> Snapchat
+            </a>
+            <a href="https://instagram.com/krki_1999?" target="_blank" class="contact-button">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Stefan Ilic. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
