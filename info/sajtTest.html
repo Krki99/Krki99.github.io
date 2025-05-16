@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Laser Cut Shop</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-left">
+      <img src="https://via.placeholder.com/50" alt="Logo" id="logo" />
+      <span id="site-name">LaserCut</span>
+    </div>
+    <div class="header-right">
+      <button id="lang-en" class="lang-btn" aria-label="Switch to English" data-en="English"
+        data-sr="Engleski">Eng</button>
+      <button id="lang-sr" class="lang-btn selected" aria-label="Switch to Serbian" data-en="Serbian"
+        data-sr="Srpski">Sr</button>
+      <label class="switch" aria-label="Toggle dark mode">
+        <input type="checkbox" id="dark-mode-toggle" />
+        <span class="slider round"></span>
+      </label>
+      <button id="cart-btn" aria-label="Open Cart" title="Cart">
+        🛒 <span id="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="shop" aria-label="Shop products">
+      <h2 data-en="Shop" data-sr="Prodavnica">Prodavnica</h2>
+      <div id="product-list" class="product-list"></div>
+    </section>
+
+    <section id="cart-card" class="hidden" aria-label="Shopping Cart">
+      <h3 data-en="Your Cart" data-sr="Vaša korpa">Vaša korpa</h3>
+      <ul id="cart-items" class="cart-items"></ul>
+      <button id="checkout-btn" class="checkout-btn" data-en="Checkout" data-sr="Poruči">Poruči</button>
+      <button id="close-cart-btn" class="close-cart-btn" aria-label="Close Cart">&times;</button>
+    </section>
+
+    <section id="contact-order" aria-label="Contact and order form">
+      <h2 data-en="Contact & Order" data-sr="Kontakt i Porudžbina">Kontakt i Porudžbina</h2>
+      <form id="contact-form">
+        <label for="name" data-en="Name" data-sr="Ime">Ime</label>
+        <input type="text" id="name" name="name" placeholder="Vaše ime" required />
+
+        <div class="contact-phone">
+          <select id="prefix" name="prefix" aria-label="Phone prefix">
+            <option value="+381" selected>+381</option>
+            <option value="+1">+1</option>
+            <option value="+44">+44</option>
+            <!-- add more prefixes here -->
+          </select>
+          <input type="tel" id="phone" name="phone" placeholder="Phone Number" required />
+        </div>
+
+        <label for="order-summary" data-en="Order Summary" data-sr="Detalji porudžbine">Detalji porudžbine</label>
+        <textarea id="order-summary" name="orderSummary" readonly></textarea>
+
+        <label for="additional" data-en="Additional Info" data-sr="Dodatne informacije">Dodatne informacije</label>
+        <textarea id="additional" name="additional" placeholder="Unesite dodatne informacije"></textarea>
+
+        <button type="submit" id="submit-order" data-en="Send Order" data-sr="Pošalji porudžbinu">Pošalji
+          porudžbinu</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Product Modal -->
+  <div id="product-modal" class="hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+    <div class="modal-content">
+      <button id="close-modal" class="close-modal" aria-label="Close modal">&times;</button>
+      <h3 id="modal-title"></h3>
+      <div id="modal-images" class="modal-images"></div>
+      <p id="modal-description"></p>
+      <div id="modal-price" class="modal-price"></div>
+      <button id="add-to-cart-btn" class="add-to-cart-btn">Add to Cart</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
