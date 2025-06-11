@@ -13,7 +13,7 @@ const products = [
     name_en: 'Espresso',
     name_sr: 'Espreso',
     price: 150,
-    img: 'https://source.unsplash.com/400x300/?espresso'
+    img: 'images/espreso.jpeg'
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const products = [
     name_en: 'Cappuccino',
     name_sr: 'Kapućino',
     price: 200,
-    img: 'https://source.unsplash.com/400x300/?cappuccino'
+    img: 'images/cappuccino.jpeg'
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const products = [
     name_en: 'Green Tea',
     name_sr: 'Zeleni Čaj',
     price: 180,
-    img: 'https://source.unsplash.com/400x300/?tea'
+    img: 'images/green_tea.jpg'
   }
 ];
 
