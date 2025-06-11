@@ -1,9 +1,9 @@
 :root {
-  --primary: #fcd34d;
-  --accent: #1e40af;
+  --primary: #98CD00;
+  --accent: #A4DD00;
   --text: #111;
-  --bg: #f8f8f8;
-  --card: #fff;
+  --bg: #FFFADC;
+  --card: #FFFADD;
   --radius: 1rem;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -154,7 +154,7 @@ main {
 #cart-sidebar ul {
   list-style: none;
   padding: 0;
-  flex: 1;
+  flex: 0.9;
   overflow-y: auto;
 }
 
@@ -166,6 +166,10 @@ main {
 #cart-total {
   margin-top: 1rem;
   font-weight: bold;
+}
+
+#cart-item {
+
 }
 
 #order-btn {
