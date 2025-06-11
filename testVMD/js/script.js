@@ -1,4 +1,12 @@
 const products = [
+  //  {
+  //   id: 1,                      // Bitno je da bude unikatan TODO: mozda nekako moze da se napravi da bude auto increment ali otom potom
+  //   category: 'coffee',         // Nebitno je sta je, i na kom je jeziku, kasnije se setuje kroz kod
+  //   name_en: 'Espresso',        // za dodavanje jos jezika potrebno je dodati atribute sa imenom, i vrednosti kao i vrednost jezika u HTML-u
+  //   name_sr: 'Espreso',         
+  //   price: 150,                // cena
+  //   img: 'images/espreso.jpeg' // Ne mora da bude 400x300 ali je pozeljno 
+  // },
   {
     id: 1,
     category: 'coffee',
@@ -22,125 +30,7 @@ const products = [
     name_sr: 'Zeleni Čaj',
     price: 180,
     img: 'https://source.unsplash.com/400x300/?tea'
-  },
-  {
-    id: 4,
-    category: 'dessert',
-    name_en: 'NEsto slatko na engleskom za test',
-    name_sr: 'NEsto slatko na srpskom za test',
-    price: 180,
-    img: 'https://source.unsplash.com/400x300/?tea'
   }
-
-,
-  {
-    id: 5,
-    category: 'dessert',
-    name_en: 'NEsto slatko na engleskom za test',
-    name_sr: 'NEsto slatko na srpskom za test',
-    price: 180,
-    img: 'https://source.unsplash.com/400x300/?tea'
-  }
-  ,
-  {
-    id: 6,
-    category: 'dessert',
-    name_en: 'NEsto slatko na engleskom za test',
-    name_sr: 'NEsto slatko na srpskom za test',
-    price: 180,
-    img: 'https://source.unsplash.com/400x300/?tea'
-  }
-  ,
-  {
-    id: 7,
-    category: 'dessert',
-    name_en: 'NEsto slatko na engleskom za test',
-    name_sr: 'NEsto slatko na srpskom za test',
-    price: 180,
-    img: 'https://source.unsplash.com/400x300/?tea'
-  }
-  ,
-  {
-    id: 48,
-    category: 'dessert',
-    name_en: 'NEsto slatko na engleskom za test',
-    name_sr: 'NEsto slatko na srpskom za test',
-    price: 180,
-    img: 'https://source.unsplash.com/400x300/?tea'
-  }
-  ,
-  {
-    id: 9,
-    category: 'dessert',
-    name_en: 'NEsto slatko na engleskom za test',
-    name_sr: 'NEsto slatko na srpskom za test',
-    price: 180,
-    img: 'https://source.unsplash.com/400x300/?tea'
-  }
-  ,
-  {
-    id: 10,
-    category: 'dessert',
-    name_en: 'NEsto slatko na engleskom za test',
-    name_sr: 'NEsto slatko na srpskom za test',
-    price: 180,
-    img: 'https://source.unsplash.com/400x300/?tea'
-  }
-  ,
-  {
-    id: 11,
-    category: 'dessert',
-    name_en: 'NEsto slatko na engleskom za test',
-    name_sr: 'NEsto slatko na srpskom za test',
-    price: 180,
-    img: 'https://source.unsplash.com/400x300/?tea'
-  }
-  ,
-  {
-    id: 12,
-    category: 'dessert',
-    name_en: 'NEsto slatko na engleskom za test',
-    name_sr: 'NEsto slatko na srpskom za test',
-    price: 180,
-    img: 'https://source.unsplash.com/400x300/?tea'
-  }
-  ,
-  {
-    id: 111,
-    category: 'dessert',
-    name_en: 'NEsto slatko na engleskom za test',
-    name_sr: 'NEsto slatko na srpskom za test',
-    price: 180,
-    img: 'https://source.unsplash.com/400x300/?tea'
-  }
-  ,
-  {
-    id: 112,
-    category: 'dessert',
-    name_en: 'NEsto slatko na engleskom za test',
-    name_sr: 'NEsto slatko na srpskom za test',
-    price: 180,
-    img: 'https://source.unsplash.com/400x300/?tea'
-  }
-  ,
-  {
-    id: 211,
-    category: 'dessert',
-    name_en: 'NEsto slatko na engleskom za test',
-    name_sr: 'NEsto slatko na srpskom za test',
-    price: 180,
-    img: 'https://source.unsplash.com/400x300/?tea'
-  }
-  ,
-  {
-    id: 212,
-    category: 'dessert',
-    name_en: 'NEsto slatko na engleskom za test',
-    name_sr: 'NEsto slatko na srpskom za test',
-    price: 180,
-    img: 'https://source.unsplash.com/400x300/?tea'
-  }
-
 ];
 
 const langData = {
@@ -148,13 +38,7 @@ const langData = {
   sr: { cart: 'Korpa', order: 'Poruči' }
 };
 
-const categoryNames = {
-  coffee: { en: 'Coffee', sr: 'Kafa' },
-  tea: { en: 'Tea', sr: 'Čaj' },
-  dessert: { en: 'Dessert', sr: 'Dezert' }
-};
-
-let currentLang = 'sr';
+let currentLang = 'en';
 let cart = [];
 
 const categoriesContainer = document.getElementById('categories');
@@ -176,7 +60,7 @@ function renderCategories() {
   getCategories().forEach(cat => {
     const btn = document.createElement('button');
     btn.className = 'category-btn';
-    btn.textContent = categoryNames[cat][currentLang] || cat;
+    btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
     btn.onclick = () => renderMenu(cat);
     categoriesContainer.appendChild(btn);
   });
@@ -231,7 +115,7 @@ function translateLabels() {
 document.getElementById('language-switcher').addEventListener('change', (e) => {
   currentLang = e.target.value;
   translateLabels();
-  renderCategories(); // re-renders category names
+  renderCategories();
   renderMenu(getCategories()[0]);
   updateCart();
 });

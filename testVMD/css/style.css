@@ -3,7 +3,7 @@
   --accent: #A4DD00;
   --text: #111;
   --bg: #FFFADC;
-  --card: #FFFADD;
+  --card: #FFFAEF;
   --radius: 1rem;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -166,10 +166,6 @@ main {
 #cart-total {
   margin-top: 1rem;
   font-weight: bold;
-}
-
-#cart-item {
-
 }
 
 #order-btn {
