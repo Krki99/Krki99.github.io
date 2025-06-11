@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cafe Glovo Style</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1 id="site-title">Cafe Menu</h1>
+    <div class="controls">
+      <select id="language-switcher">
+        <option value="en">English</option>
+        <option value="sr">Srpski</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <div id="categories"></div>
+    <div id="menu-items"></div>
+  </main>
+
+  <!-- Floating Cart Button -->
+  <div id="cart-button">
+    🛒 <span id="cart-count">0</span>
+  </div>
+
+  <!-- Sidebar Cart -->
+  <aside id="cart-sidebar" class="hidden">
+    <div class="cart-header">
+      <h2 data-lang="cart">Cart</h2>
+      <button id="close-cart">✕</button>
+    </div>
+    <ul id="cart-items"></ul>
+    <div id="cart-total"></div>
+    <button id="order-btn" data-lang="order">Order</button>
+  </aside>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
