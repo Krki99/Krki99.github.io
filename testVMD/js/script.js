@@ -22,7 +22,125 @@ const products = [
     name_sr: 'Zeleni Čaj',
     price: 180,
     img: 'https://source.unsplash.com/400x300/?tea'
+  },
+  {
+    id: 4,
+    category: 'dessert',
+    name_en: 'NEsto slatko na engleskom za test',
+    name_sr: 'NEsto slatko na srpskom za test',
+    price: 180,
+    img: 'https://source.unsplash.com/400x300/?tea'
   }
+
+,
+  {
+    id: 5,
+    category: 'dessert',
+    name_en: 'NEsto slatko na engleskom za test',
+    name_sr: 'NEsto slatko na srpskom za test',
+    price: 180,
+    img: 'https://source.unsplash.com/400x300/?tea'
+  }
+  ,
+  {
+    id: 6,
+    category: 'dessert',
+    name_en: 'NEsto slatko na engleskom za test',
+    name_sr: 'NEsto slatko na srpskom za test',
+    price: 180,
+    img: 'https://source.unsplash.com/400x300/?tea'
+  }
+  ,
+  {
+    id: 7,
+    category: 'dessert',
+    name_en: 'NEsto slatko na engleskom za test',
+    name_sr: 'NEsto slatko na srpskom za test',
+    price: 180,
+    img: 'https://source.unsplash.com/400x300/?tea'
+  }
+  ,
+  {
+    id: 48,
+    category: 'dessert',
+    name_en: 'NEsto slatko na engleskom za test',
+    name_sr: 'NEsto slatko na srpskom za test',
+    price: 180,
+    img: 'https://source.unsplash.com/400x300/?tea'
+  }
+  ,
+  {
+    id: 9,
+    category: 'dessert',
+    name_en: 'NEsto slatko na engleskom za test',
+    name_sr: 'NEsto slatko na srpskom za test',
+    price: 180,
+    img: 'https://source.unsplash.com/400x300/?tea'
+  }
+  ,
+  {
+    id: 10,
+    category: 'dessert',
+    name_en: 'NEsto slatko na engleskom za test',
+    name_sr: 'NEsto slatko na srpskom za test',
+    price: 180,
+    img: 'https://source.unsplash.com/400x300/?tea'
+  }
+  ,
+  {
+    id: 11,
+    category: 'dessert',
+    name_en: 'NEsto slatko na engleskom za test',
+    name_sr: 'NEsto slatko na srpskom za test',
+    price: 180,
+    img: 'https://source.unsplash.com/400x300/?tea'
+  }
+  ,
+  {
+    id: 12,
+    category: 'dessert',
+    name_en: 'NEsto slatko na engleskom za test',
+    name_sr: 'NEsto slatko na srpskom za test',
+    price: 180,
+    img: 'https://source.unsplash.com/400x300/?tea'
+  }
+  ,
+  {
+    id: 111,
+    category: 'dessert',
+    name_en: 'NEsto slatko na engleskom za test',
+    name_sr: 'NEsto slatko na srpskom za test',
+    price: 180,
+    img: 'https://source.unsplash.com/400x300/?tea'
+  }
+  ,
+  {
+    id: 112,
+    category: 'dessert',
+    name_en: 'NEsto slatko na engleskom za test',
+    name_sr: 'NEsto slatko na srpskom za test',
+    price: 180,
+    img: 'https://source.unsplash.com/400x300/?tea'
+  }
+  ,
+  {
+    id: 211,
+    category: 'dessert',
+    name_en: 'NEsto slatko na engleskom za test',
+    name_sr: 'NEsto slatko na srpskom za test',
+    price: 180,
+    img: 'https://source.unsplash.com/400x300/?tea'
+  }
+  ,
+  {
+    id: 212,
+    category: 'dessert',
+    name_en: 'NEsto slatko na engleskom za test',
+    name_sr: 'NEsto slatko na srpskom za test',
+    price: 180,
+    img: 'https://source.unsplash.com/400x300/?tea'
+  }
+
 ];
 
 const langData = {
@@ -30,7 +148,13 @@ const langData = {
   sr: { cart: 'Korpa', order: 'Poruči' }
 };
 
-let currentLang = 'en';
+const categoryNames = {
+  coffee: { en: 'Coffee', sr: 'Kafa' },
+  tea: { en: 'Tea', sr: 'Čaj' },
+  dessert: { en: 'Dessert', sr: 'Dezert' }
+};
+
+let currentLang = 'sr';
 let cart = [];
 
 const categoriesContainer = document.getElementById('categories');
@@ -52,7 +176,7 @@ function renderCategories() {
   getCategories().forEach(cat => {
     const btn = document.createElement('button');
     btn.className = 'category-btn';
-    btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+    btn.textContent = categoryNames[cat][currentLang] || cat;
     btn.onclick = () => renderMenu(cat);
     categoriesContainer.appendChild(btn);
   });
@@ -107,7 +231,7 @@ function translateLabels() {
 document.getElementById('language-switcher').addEventListener('change', (e) => {
   currentLang = e.target.value;
   translateLabels();
-  renderCategories();
+  renderCategories(); // re-renders category names
   renderMenu(getCategories()[0]);
   updateCart();
 });
