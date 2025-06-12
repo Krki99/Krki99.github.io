@@ -9,11 +9,11 @@ const products = [
   // },
   {
     id: 1,
-    category: 'coffee',         
-    name_en: 'Espresso',   
+    category: 'coffee',
+    name_en: 'Espresso',
     name_sr: 'Espreso',
-    price: 150,                
-    img: 'images/espreso.jpeg' 
+    price: 150,
+    img: 'images/espreso.jpeg'
   },
   {
     id: 2,
@@ -211,7 +211,7 @@ const products = [
     price: 180,
     img: 'https://source.unsplash.com/400x300/?tea'
   },
-    {
+  {
     id: 1999,
     category: 'coffee',
     name_en: 'Cappuccino2',
@@ -241,6 +241,7 @@ const categoryNames = { // dodavanje kategorije i imena za njih, uglavnom je lak
 let currentLang = 'sr';
 let cart = [];
 let tableId = '';
+let cartTotalValue = 0;
 
 const categoriesContainer = document.getElementById('categories');
 const menuContainer = document.getElementById('menu-items');
@@ -304,6 +305,7 @@ function updateCart() {
     li.textContent = `${item[`name_${currentLang}`]} x${item.qty}`;
     cartItems.appendChild(li);
   });
+  cartTotalValue = total;
   cartTotal.textContent = `${total} RSD`;
   cartCount.textContent = cart.reduce((a, b) => a + b.qty, 0);
 }
@@ -329,42 +331,15 @@ closeCartBtn.addEventListener('click', () => {
   cartSidebar.classList.remove('visible');
 });
 
-const orderData = {
-    tableNum: tableId,
-    items: cart,
-    total: cart.reduce((sum, item) => sum + item.price * item.qty, 0),
-  };
-
-// async function sendOrder(orderData) {
-//   try {
-//     const itemsSummary = orderData.items.map(item => {
-//       return {
-//         name: item.name_sr  || 'Unknown',
-//         qty: item.qty || 0
-//       };
-//     });
-
-//     // Pripremamo novi objekat za slanje
-//     const orderToSend = {
-//       items: itemsSummary,
-//       tableId: orderData.tableId || '',
-//       total: orderData.total,
-//       language: orderData.language,
-//       createdAt: serverTimestamp()
-//     };
-
-//     await addDoc(collection(db, "orders"), orderToSend);
-//     alert("Order sent!");
-//   } catch (e) {
-//     alert("Error sending order: " + e.message);
-//   }
-// }
 
 orderBtn.addEventListener('click', () => {
-  
+  const orderData = {
+    tableNumber: tableId,
+    items: cart,
+    total: cartTotalValue
+  };
 
-
-placeOrder(orderData);
+  placeOrder(orderData);
 });
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -372,10 +347,6 @@ window.addEventListener('DOMContentLoaded', () => {
   tableId = params.get('table') || '';
   document.getElementById('table-id').value = tableId; // optional if input used
 });
-
-
-
-// obrada irdera
 
 window.onload = () => {
   translateLabels();
@@ -385,6 +356,7 @@ window.onload = () => {
 
 function placeOrder(orderData) {
 
+  console.log('total:', orderData.total);
   // Pozivanje globalne funkcije postavljene iz modula
   if (window.sendOrder) {
     window.sendOrder(orderData);

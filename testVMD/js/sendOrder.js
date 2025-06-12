@@ -29,6 +29,7 @@ export async function sendOrder(orderData) {
     });
 
     const orderToSend = {
+      tableNum: tableId,
       items: itemsSummary,
       tableId: orderData.tableId || '',
       total: orderData.total,
