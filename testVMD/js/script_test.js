@@ -210,7 +210,15 @@ const products = [
     name_sr: 'NEsto slatko na srpskom za test',
     price: 180,
     img: 'https://source.unsplash.com/400x300/?tea'
-  }
+  },
+    {
+    id: 1999,
+    category: 'coffee',
+    name_en: 'Cappuccino2',
+    name_sr: 'Kapućino2',
+    price: 200,
+    img: 'images/cappuccino.jpeg'
+  },
 
 ];
 
@@ -225,8 +233,14 @@ const categoryNames = { // dodavanje kategorije i imena za njih, uglavnom je lak
   dessert: { en: 'Dessert', sr: 'Dezert' }
 };
 
+
+
+// deo za obradu
+
+
 let currentLang = 'sr';
 let cart = [];
+let tableId = '';
 
 const categoriesContainer = document.getElementById('categories');
 const menuContainer = document.getElementById('menu-items');
@@ -317,22 +331,37 @@ closeCartBtn.addEventListener('click', () => {
 
 orderBtn.addEventListener('click', () => {
   const orderData = {
+    tableNum: tableId,
     items: cart,
     total: cart.reduce((sum, item) => sum + item.price * item.qty, 0),
-    language: currentLang
   };
 
-  fetch('https://example.com/api/order', { /* TODO: Dodati SRV za orderovanje */
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(orderData)
-  })
-    .then(res => res.ok ? alert(currentLang === 'en' ? 'Order sent!' : 'Porudžbina poslata!') : alert('Error'))
-    .catch(() => alert('Error'));
+
+placeOrder(orderData);
 });
+
+window.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  tableId = params.get('table') || '';
+  document.getElementById('table-id').value = tableId; // optional if input used
+});
+
+
+
+// obrada irdera
 
 window.onload = () => {
   translateLabels();
   renderCategories();
   renderMenu(getCategories()[0]);
 };
+
+function placeOrder(orderData) {
+
+  // Pozivanje globalne funkcije postavljene iz modula
+  if (window.sendOrder) {
+    window.sendOrder(orderData);
+  } else {
+    alert("Order function not available yet.");
+  }
+}
