@@ -37,15 +37,14 @@ onSnapshot(ordersQuery, (snapshot) => {
         const order = docSnap.data();
         const orderId = docSnap.id;
         const tableID = order.tableNum || 'N/A';
-        console.log('Table ID:', tableID);
-
+        
         let time = "";
         if (order.createdAt && order.createdAt.toDate) {
             time = order.createdAt.toDate().toLocaleString();
         }
 
         const itemsList = order.items
-            .map((item) => `${item[`name_${order.language}`]} x${item.qty}`)
+            .map((item) => `${item.name} x${item.qty}`)
             .join(", ");
 
         const tr = document.createElement("tr");

@@ -23,8 +23,8 @@ export async function sendOrder(orderData) {
   try {
     const itemsSummary = orderData.items.map(item => {
       return {
-        name: item[`name_${orderData.language}`] || 'Unknown',
-        qty: item.qty || 0
+        name: item.name_sr || 'Unknown',
+        qty: item.qty
       };
     });
 

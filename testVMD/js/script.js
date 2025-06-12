@@ -233,6 +233,11 @@ const categoryNames = { // dodavanje kategorije i imena za njih, uglavnom je lak
   dessert: { en: 'Dessert', sr: 'Dezert' }
 };
 
+
+
+// deo za obradu
+
+
 let currentLang = 'sr';
 let cart = [];
 let tableId = '';
@@ -340,6 +345,10 @@ window.addEventListener('DOMContentLoaded', () => {
   tableId = params.get('table') || '';
   document.getElementById('table-id').value = tableId; // optional if input used
 });
+
+
+
+// obrada irdera
 
 window.onload = () => {
   translateLabels();
