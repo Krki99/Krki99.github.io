@@ -1,41 +1,18 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f9f9f9;
+  font-family: Arial, sans-serif;
+  margin: 20px;
 }
 
-header {
-  background: #ffde59;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+table {
+  border-collapse: collapse;
+  width: 100%;
 }
 
-main {
-  padding: 1rem;
+th,td {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
 }
 
-.order-card {
-  background: #fff;
-  border-left: 5px solid #00c389;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  border-radius: 8px;
-}
-
-.order-card h2 {
-  margin: 0 0 0.5rem;
-  font-size: 1.1rem;
-}
-
-.order-card ul {
-  margin: 0;
-  padding-left: 1.2rem;
-}
-
-.order-card time {
-  font-size: 0.8rem;
-  color: #777;
+th {
+  background-color: #f4f4f4;
 }

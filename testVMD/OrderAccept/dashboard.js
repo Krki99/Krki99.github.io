@@ -67,6 +67,7 @@ onSnapshot(ordersQuery, (snapshot) => {
                 try {
                     await deleteDoc(doc(db, "orders", orderId));
                     alert("Order deleted successfully.");
+                    location.reload();
                 } catch (error) {
                     console.error("Error deleting order:", error);
                     alert("Failed to delete order. Check console for details.");
